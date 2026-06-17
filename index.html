@@ -1067,15 +1067,15 @@
 
         <div class="invoice-total">
           <div class="total-label">Total</div>
-          <div class="total-value"><span class="currency">$</span>8,000</div>
+          <div class="total-value"><span class="currency">$</span>2,000</div>
         </div>
 
         <div class="includes">
-          <div class="includes-title">+ Package Inclusions</div>
+          <div class="includes-title">+ What's Included</div>
           <ul class="includes-list">
-            <li><strong>5 minutes</strong> of animated content, produced and delivered</li>
-            <li><strong>$1,400 / min floor</strong> on future buys — skip the $1,500 minimum tier <span class="lifetime-badge">Lifetime</span></li>
-            <li>Volume discounts still apply: <strong>$1,300</strong> at 10+ min, <strong>$1,200</strong> at 30+ min</li>
+            <li>A fully built <strong>brand landing page</strong>, designed and delivered</li>
+            <li>Your <strong>Lore</strong> — world rules, story bibles, narrative arcs</li>
+            <li><strong>Assets &amp; Audio</strong> identity baked in <span class="lifetime-badge">Yours</span></li>
           </ul>
         </div>
 
@@ -1100,40 +1100,40 @@
         <div class="readout">
           <div class="readout-row">
             <span class="readout-label">Minutes</span>
-            <span class="readout-value"><span class="num" id="minDisplay">3</span></span>
+            <span class="readout-value"><span class="num" id="minDisplay">1</span></span>
           </div>
           <div class="readout-row">
             <span class="readout-label">Rate / Min</span>
-            <span class="readout-value">$<span class="num" id="rateDisplay">1,500</span></span>
+            <span class="readout-value">$<span class="num" id="rateDisplay">1,000</span></span>
           </div>
           <div class="readout-row">
             <span class="readout-label">Tier</span>
-            <span class="readout-value" id="tierDisplay">Minimum</span>
+            <span class="readout-value" id="tierDisplay">Base</span>
           </div>
 
           <div class="total-display">
             <div class="total-display-label">Total</div>
-            <div class="total-display-value" id="totalDisplay"><span class="currency">$</span><span id="totalNum">4,500</span></div>
+            <div class="total-display-value" id="totalDisplay"><span class="currency">$</span><span id="totalNum">1,000</span></div>
           </div>
         </div>
 
         <div class="slider-wrap">
           <div class="slider-track-wrap">
             <div class="slider-fill" id="sliderFill"></div>
-            <input type="range" id="minutesSlider" min="3" max="60" value="3" step="1" />
+            <input type="range" id="minutesSlider" min="1" max="60" value="1" step="1" />
           </div>
 
           <div class="tier-markers" id="tierMarkers">
-            <div class="tier-mark" style="left: 0%;" data-min="3">
-              <div class="tick"></div><div class="label">3</div>
+            <div class="tier-mark" style="left: 0%;" data-min="1">
+              <div class="tick"></div><div class="label">1</div>
             </div>
-            <div class="tier-mark" style="left: 3.51%;" data-min="5">
+            <div class="tier-mark" style="left: 6.78%;" data-min="5">
               <div class="tick"></div><div class="label">5</div>
             </div>
-            <div class="tier-mark" style="left: 12.28%;" data-min="10">
+            <div class="tier-mark" style="left: 15.25%;" data-min="10">
               <div class="tick"></div><div class="label">10</div>
             </div>
-            <div class="tier-mark" style="left: 47.37%;" data-min="30">
+            <div class="tier-mark" style="left: 49.15%;" data-min="30">
               <div class="tick"></div><div class="label">30</div>
             </div>
             <div class="tier-mark" style="left: 100%;" data-min="60">
@@ -1143,7 +1143,7 @@
 
           <div class="minute-step-controls">
             <button class="step-btn" id="stepDown" aria-label="Decrease minutes">−</button>
-            <div class="minute-readout"><span class="big" id="bigMinDisplay">3</span> minutes selected</div>
+            <div class="minute-readout"><span class="big" id="bigMinDisplay">1</span> minutes selected</div>
             <button class="step-btn" id="stepUp" aria-label="Increase minutes">+</button>
           </div>
         </div>
@@ -1151,25 +1151,21 @@
         <div class="tier-table">
           <div class="tier-table-title">Rate Card</div>
           <div class="tier-row" data-tier="1">
-            <span class="tier-range">3 – 4 mins <span style="opacity:0.5; font-size:11px;">(minimum)</span></span>
-            <span class="tier-rate">$1,500 / min</span>
+            <span class="tier-range">1 – 4 mins</span>
+            <span class="tier-rate">$1,000 / min</span>
           </div>
           <div class="tier-row" data-tier="2">
             <span class="tier-range">5 – 9 mins</span>
-            <span class="tier-rate">$1,400 / min</span>
+            <span class="tier-rate">$900 / min</span>
           </div>
           <div class="tier-row" data-tier="3">
-            <span class="tier-range">10 – 29 mins</span>
-            <span class="tier-rate">$1,300 / min</span>
-          </div>
-          <div class="tier-row" data-tier="4">
-            <span class="tier-range">30+ mins</span>
-            <span class="tier-rate">$1,200 / min</span>
+            <span class="tier-range">10+ mins</span>
+            <span class="tier-rate">$800 / min</span>
           </div>
         </div>
 
         <div class="compare-flag" id="compareFlag">
-          <strong>Compare:</strong> At 5 minutes, direct production runs $7,000. The Brand World Package gives you the world <em>plus</em> 5 minutes for $8,000 — and locks future minutes at $1,400 for life.
+          <strong>Compare:</strong> 1 min at the base $1,000/min = $1,000. Commission 5+ at once and the rate starts dropping.
         </div>
 
       </section>
@@ -1239,14 +1235,13 @@
   const stepUp = document.getElementById('stepUp');
   const stepDown = document.getElementById('stepDown');
 
-  const MIN = 3;
+  const MIN = 1;
   const MAX = 60;
 
   function getRate(mins) {
-    if (mins >= 30) return { rate: 1200, tier: 4, name: 'Bulk' };
-    if (mins >= 10) return { rate: 1300, tier: 3, name: 'Scale' };
-    if (mins >= 5)  return { rate: 1400, tier: 2, name: 'Series' };
-    return { rate: 1500, tier: 1, name: 'Minimum' };
+    if (mins >= 10) return { rate: 800, tier: 3, name: 'Scale' };
+    if (mins >= 5)  return { rate: 900, tier: 2, name: 'Series' };
+    return { rate: 1000, tier: 1, name: 'Base' };
   }
 
   function fmt(n) {
@@ -1290,24 +1285,16 @@
   }
 
   function updateCompare(mins, total) {
-    // Package owner's effective rate: $1,400 floor, then standard volume tiers kick in
-    let pkgRate;
-    if (mins >= 30) pkgRate = 1200;
-    else if (mins >= 10) pkgRate = 1300;
-    else pkgRate = 1400;  // covers both 3-4 (floor) and 5-9 (same as direct)
-    const pkgTotal = pkgRate * mins;
-    const savings = total - pkgTotal;
+    const BASE = 1000;
+    const savings = BASE * mins - total;
 
     let html = '';
     if (mins < 5) {
-      // Only tier where package rate beats direct rate
-      html = `<strong>Compare:</strong> At ${mins} min direct = $${fmt(total)}. Package owners pay $${fmt(pkgTotal)} (their $1,400 floor) — saving $${fmt(savings)} on these minutes alone. And they own the entire world.`;
+      html = `<strong>Compare:</strong> ${mins} min at the base $1,000/min = $${fmt(total)}. Commission 5+ at once and the rate starts dropping.`;
     } else if (mins < 10) {
-      html = `<strong>Compare:</strong> At ${mins} min, direct and package owners pay the same $1,400/min. Package value lives in the world itself — assets, lore, audio — plus 5 minutes already included for $8,000.`;
-    } else if (mins < 30) {
-      html = `<strong>Compare:</strong> At ${mins} min, both direct and package owners hit the $1,300/min volume tier. Same per-minute cost. Package owners just also happen to own the IP.`;
+      html = `<strong>Compare:</strong> At ${mins} min you're on the $900/min tier — $${fmt(total)} total, saving $${fmt(savings)} vs the base rate. Hit 10 min to unlock $800/min.`;
     } else {
-      html = `<strong>Compare:</strong> At ${mins} min, everyone pays the $1,200/min floor — direct and package alike. The package's value at this scale is pure IP ownership: a world you can reuse across every series, format, and campaign.`;
+      html = `<strong>Compare:</strong> At ${mins} min you're at the $800/min volume floor — $${fmt(total)} total, saving $${fmt(savings)} vs the base $1,000 rate.`;
     }
     compareFlag.innerHTML = html;
   }
